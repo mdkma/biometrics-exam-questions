@@ -105,7 +105,16 @@ Disadvantages
 > The following two models are from the different speakers saying the same vowel. Please try to define some necessary features to divide these two models.
 ![q3](img/3.png)
 
+❓do we need to analyze these two figure specificly?
+
 Feature set: cadence, frequency, pitch and tone of an individual's voice
+
+* frequency-ban analysis
+* identification from spectrograms
+* use of coarticulation
+* formant frequencies
+* pitch contours
+* features derived from linear prediction
 
 ### 4 
 
