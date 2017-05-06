@@ -80,6 +80,8 @@ Classification approach cuts down the DB in several (fuzzy/non-fuzzy) groups. Th
 ### 16-A2
 
 > There are two kinds of biometrics from an eye, i.e. Iris and Retina. Please define their features and explain each advantages and disadvantages.
+> 
+> 13-C1: what kinds of features can you find from a retina image?
 
 #### Retina features
 Physical features 
@@ -134,9 +136,11 @@ Disadvantages
 * accuracy decreases when users wear eyeglass, obscured by eyelashes, lenses/reflections
 * any unusual lighting situations may affect the ability of the camera to acquire its subject
 
-### 13-A1
+### 13-A1, 12-A1
 
 >Please compare the features between two kinds of biometrics: Back Vein and Palmprint, and then explain which one is more accurate, why?
+>
+> Please compare the features between two kinds of biometrics: Hand Shape and Palmprint, and then explain which one is more accurate, why?
 
 Features of Palmprint: Lec10-14
 
@@ -272,6 +276,23 @@ Pattern classification, template matching.
 **Text-dependent speaker ID**: provide utterance of key words or sentences that are the same for training and recognition.
 **Text-independent speaker ID**: verifies the identity of the individual who is speaking. The performance of verification can vary according to: the quality of the audio signal, ambient noise, the variation between enrollment and verification devices. So same device for acquisition and verification.
 
+### 12-A6
+
+> Please define the following basic concepts used in image processing:
+> 
+> Pixel
+> Image
+> Image histogram
+> Point operation
+
+Pixel: the point at which an image is sampled as known as picture elements.
+
+Image: a spatial presentation of an object: matrix representing quantized intensity values
+
+Image histograms: Plots of $N_j$ v.s. $j$: shows the distribution of image pixels in terms of their gray levels.
+
+Point operations: a function is applied to every pixel in an image, which operates only on the pixel's current value.
+
 ### 13-A4
 
 > Generally, there exist four main stages in a given biometric system. Please indicate each function.
@@ -406,7 +427,7 @@ A local representation consists of several components, each component typically 
 
 Typically, generic representations are used for fingerprint indexing and local representations are used for fingerprint matching.
 
-### 14
+### 14-B3
 
 > What kind of points could be shown as singular points? Could you draw three basic fingerprint classes according to singular points?
 > How many different points could be usually indicated as fingerprint minutia? Please list each definition.
@@ -474,5 +495,11 @@ Crossover = 1:x <- x=round(1/EER)
 FRR = 8/46
 FAR = 10/54
 ATV = 0.5*38/46 = 0.41
+
+### 12-D2
+
+> As an example of image de-noise, could you roughly explain how to do by using function of frequency domain?
+
+Frequency domain relates to the Fourier transform by decomposing a function into an infinite or finite number of frequencies.
 
 
