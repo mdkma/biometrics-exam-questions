@@ -101,7 +101,7 @@ Advantages
 * accuracy
 * stability of biometrics Sample
 * resistant to fraud
-* small temple
+* small template
 
 Disadvantages
 
