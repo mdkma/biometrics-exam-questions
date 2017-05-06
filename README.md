@@ -1,6 +1,6 @@
 # Past Questions and Answers
 
-Apr 29, 2017 | [Derek Mingyu MA](http://derek.ma) | <derek.ma@connect.polyu.hk>
+Mar 6, 2017 | [Derek Mingyu MA](http://derek.ma) | <derek.ma@connect.polyu.hk>
 
 ## Knowledge Structure
 
@@ -58,8 +58,25 @@ Evaluation Method
 ### 1
 
 > As you know, there are two doors used in the current E-Channel border application. The first one could need to show a personal HK ID card, and the second to obtain user's fingerprint and match with the record in the DB. If only one door to be used, how to implement this application? Please draw the necessary flowcharts to point out the common functions and the differences between these two doors and the one door E-Channel border application.
+> 
+> Please point out some common characteristics and differences with the necessary flowchart between identification and verification.
 
-Identity identification based on your physical characteristics or behavioral patterns. One door is using the identify identification. While the two door design is using the identify verification.
+Lec2-35
+
+One door is using the identify identification. While the two door design is using the identify verification. 
+
+Identification: who are you, one to many matching, much harder, because an identification system must perform a large number of comparisons.
+
+Verification: are you who you say you are, one to one matching
+
+Flowchart: Lec2-37
+
+**More**:
+Some systems use hierarchical or classification methods to speed up the searching. But these methods would introduce errors.
+
+Hierarchical approach uses some simple features and fast matching algorithm to retrieve a small set of templates for further recognition using complex algorithm.
+
+Classification approach cuts down the DB in several (fuzzy/non-fuzzy) groups. The input feature is classified to one/several group.
 
 
 ### 2
@@ -123,6 +140,7 @@ Disadvantages
 
 > The following two models are from the different speakers saying the same vowel. Please try to define some necessary features to divide these two models.
 ![q3](img/3.png)
+> What kind of features could be extracted from voice biometrics? Please list at least 3 features in detail.
 
 ❓do we need to analyze these two figure specifically?
 
@@ -195,6 +213,27 @@ Hamming distance: 3/5.
 
 > There are three main approaches in biometrics authentication: Statistical, Syntactic and NN. For each approach, please give a its dfn and explore a simple application.
 
+Lec5-4
+
+**Statistical PR**: there is an underlying and quantifiable statistical basis for the generation of patterns.
+
+Most of PR systems are based on this approach.
+
+**Syntactic PR**: the underlying structure of the pattern provides the information fundamental for PR
+
+**NN**: neither of the above cases hold true, but we are able to develop and train an architecture to correctly associate input patterns with desired response.
+
+### 8
+
+> (14) There are two main functions in pattern recognition: Feature Extraction and Matching. Please explain which stage is important after all possible features are extracted. How to implement matching function? 
+
+### 9
+
+> (14) Please find their differences in the following three pairs of basic concepts:
+> Template and sample;
+> Speech recognition and voice biometrics
+> Text-dependent speaker ID and text-independent speaker ID
+
 ## Section B
 
 ### 1
@@ -204,7 +243,7 @@ Hamming distance: 3/5.
 Lec12-22
 Intra-class variability remember the difference between different classes, while inter-class similarity shows the similar features of two samples. Intra-class variability can show the key characteristics of the person, and intra-class similarity can help the system to remove the similar feature and leave unique characteristics.
 
-F-ratio is the balanced ratio considering other two variables.
+F-ratio is the balanced ratio considering other two variables. The higher this ratio, the more discriminant the feature is. **It is inter/intra**.
 
 ### 2
 
@@ -231,6 +270,8 @@ Advantages and disadvantages
 1. Eigenfaces do not distinguish between shape and appearance
 2. PCA does not use class information
 
+> (14 B2) Eigenface is PCA-based method with five steps. After finishing the first four stages, we obtain 9 eigenvectors with nonzero eigenvalues in the form of image. At the fifth step, the $k$ most principal components are selected abased on the ratio $\gamma$ of the eigenvalue sum of selected components to the total sum. Please decide the value of $k$ when the threshold of $\gamma$ is 85%.
+
 ## Section C
 
 ### 1
@@ -243,8 +284,12 @@ For first picture, $\gamma$ can be 0.5. 弧线应该是圆左上角样子
 
 For second picture, $\gamma$ can be 3. 弧线应该是圆右下角的样子
 
+> (14) Why Median Filter is better than Low-Pass Filter for noise reduction?
+
 ### 2
 > Fingerprint representations can be broadly categorized into two types: global and local. Global feature characteristics includes singular points and basic ridge patterns(six classes). Local representation is based on minute details(minutiae) of finger ridges. Given the following fingerprint image, please indicate which class it is and account all each global and local feature you can find.
+> (14) What kind of points could be shown as singular points? Could you draw three basic fingerprint classes according to singular points?
+> (14) How many different points could be usually indicated as fingerprint minutia? Please list each definition.
 
 
 **More**:
