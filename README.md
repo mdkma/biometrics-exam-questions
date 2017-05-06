@@ -420,11 +420,13 @@ What class it is?
 **Local Features**
 
 * Ridge ending
-* Ridge bifurcation
-* Ridge divergence
-* Dot or Island
-* Enclosure
-* Short ridge
+* Bifurcation
+* Dot
+* Island
+* Spur
+* Crossover
+* Bridge
+* Short Ridge
 
 **More**:
 Global representation is an overall attribute of the finger and a single representation is valid for the entire fingerprint and is typically determined by an examination of the entire finger.
