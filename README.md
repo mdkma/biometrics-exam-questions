@@ -134,6 +134,21 @@ Disadvantages
 * accuracy decreases when users wear eyeglass, obscured by eyelashes, lenses/reflections
 * any unusual lighting situations may affect the ability of the camera to acquire its subject
 
+### 13-A1
+
+>Please compare the features between two kinds of biometrics: Back Vein and Palmprint, and then explain which one is more accurate, why?
+
+Features of Palmprint: Lec10-14
+
+Geometry features: finger width; length, width, thickness and area of a palm
+
+Texture Feature
+
+Line Features: principal lines and wrinkles
+
+Point Features: minutiae point; delta point; datum point
+
+Palm Vein
 
 ### 16-A3
 
@@ -226,11 +241,22 @@ Most of PR systems are based on this approach.
 
 Example: Lec5-10
 
-### 14
+### 14-A4
 
-> (14) There are two main functions in pattern recognition: Feature Extraction and Matching. Please explain which stage is important after all possible features are extracted. How to implement matching function? 
+> There are two main functions in pattern recognition: Feature Extraction and Matching. Please explain which stage is important after all possible features are extracted. How to implement matching function? 
 
-### 14
+Lec4-27
+
+Not all features are useful for a special problem. Feature selection is the important stage after all possible features are extracted. It is the process of choosing input to PR system and involves judgement. It is important that the extracted features be relevant to the PR task at hand.
+
+How to implement matching function?
+
+1. Hypothesize a plausible solution and adjust it to fit the problem
+2. Create a mathematical model of the problem and derive an optimal classifier.
+
+Pattern classification, template matching.
+
+### 14-A5
 
 > Please find their differences in the following three pairs of basic concepts:
 > 
@@ -238,8 +264,24 @@ Example: Lec5-10
 > Speech recognition and voice biometrics
 > Text-dependent speaker ID and text-independent speaker ID
 
+**Template and Sample**(Lec2-33): system will take several samples and extract unique features from samples to create a template
+
+**Speech recognition and Voice biometrics**(Lec12-3,9): A clear graph shows at Lec12-9. Speech Processing -> Output/Input. Input can be voice biometrics or speech recognition. Voice biometrics is confirm people's identities using their voice. Speech recognition is extract information from the stream of speech and figure out what the person is saying.
+
+
 **Text-dependent speaker ID**: provide utterance of key words or sentences that are the same for training and recognition.
 **Text-independent speaker ID**: verifies the identity of the individual who is speaking. The performance of verification can vary according to: the quality of the audio signal, ambient noise, the variation between enrollment and verification devices. So same device for acquisition and verification.
+
+### 13-A4
+
+> Generally, there exist four main stages in a given biometric system. Please indicate each function.
+
+Lec2-33
+
+1. Capture: a physical or behavioral sample is captured during enrollment, identification or verification process
+2. Extraction: unique data is extracted from the sample and a template is created
+3. Comparison: the template is compared to new sample
+4. Match/non-match: system then decides if the features extracted from the new sample are a match/non-match.
 
 ## Section B
 
@@ -268,7 +310,12 @@ F-ratio is the balanced ratio considering these two variables. _The higher is th
 
 **Steps(Lec5-19)**
 
-1. Divide image data into training and testing set
+1. Divide image data into training and testing set. E.g. the training set X is composed by the first 5 samples for each class and the rest construct the test set Y.
+2. Express every image sample in X by a feature vector with dimension of its resolution. Calculate mean value for each group($m$).
+3. Calculate total scatter matrix.
+4. Compute the eigenvalue and eigenvectors of $S_t$, we have $\lambda_i\phi_i = S_t\phi_i, i=1,...,644$, where $\lambda_i$ and $\phi_i$ are the $i^{th}$ eigenvalue and eigenvector. Re-express 9 eigenvectors with nonzero eigenvalues in the form of image -> eigenfaces.
+5. Select the most principal components or eigenvectors. (ratio: selected components/total sum)
+6. Then the PCA projection transform $W$ is composed by $W = (\phi_1, ..., \phi_n)$ (if n most principal components). Obtain transformed features sets from X and Y: $X' = (X-m)*W$; $Y' = (Y-m)*W$
 
 **Advantages**
 
@@ -285,9 +332,20 @@ F-ratio is the balanced ratio considering these two variables. _The higher is th
 
 > Eigenface is PCA-based method with five steps. After finishing the first four stages, we obtain 9 eigenvectors with nonzero eigenvalues in the form of image. At the fifth step, the $k$ most principal components are selected abased on the ratio $\gamma$ of the eigenvalue sum of selected components to the total sum. Please decide the value of $k$ when the threshold of $\gamma$ is 85%.
 
+See: Lec5-24
+
+### 13-A3
+
+> What is PCA? Why can it be used for biometrics authentication?
+
+Principal Component Analysis can reduce the number of dimensions of a data set, so the image can be further processed or visualization. It is used to calculate the vectors which best represent this small region of image space.
+
+In biometrics, different types images should occupy different areas of the smaller region, so that we can identify a person by finding the nearest known vector in image space.
+
 ## Section C
 
 ### 16-C1
+
 > Power Law Function for contrast enhancement
 
 $\gamma < 1$ enhance contrast in dark regions
@@ -297,15 +355,49 @@ For first picture, $\gamma$ can be 0.5. 弧线应该是圆左上角样子
 
 For second picture, $\gamma$ can be 3. 弧线应该是圆右下角的样子
 
-### 14
+### 14-B1-2
 
 > Why Median Filter is better than Low-Pass Filter for noise reduction?
 
-### 16-C2
-> Fingerprint representations can be broadly categorized into two types: global and local. Global feature characteristics includes singular points and basic ridge patterns(six classes). Local representation is based on minute details(minutiae) of finger ridges. Given the following fingerprint image, please indicate which class it is and account all each global and local feature you can find.
-> (14) What kind of points could be shown as singular points? Could you draw three basic fingerprint classes according to singular points?
-> (14) How many different points could be usually indicated as fingerprint minutia? Please list each definition.
+Low-pass filter: blurs the edge, fine detail smoothed by averaging
 
+Median filter: fine detail passed by filter, place all pixels by neighborhood median by convolving
+
+### 14-C1
+
+> Contrast enhancement is an important method in the image preprocessing. How to design a transfer function(T) from input to output?
+
+P3-15
+
+### 16-C2
+
+> Fingerprint representations can be broadly categorized into two types: global and local. Global feature characteristics includes singular points and basic ridge patterns(six classes). Local representation is based on minute details(minutiae) of finger ridges. Given the following fingerprint image, please indicate which class it is and account all each global and local feature you can find.
+
+What class it is?
+
+**Fingerprint Classification**
+
+* Loop
+* Arch
+* Whorl
+
+**Global Features**
+
+* Pattern Area
+* Core Point
+* Type Lines
+* Delta
+* Ridge Count
+* Basic Ridge Patterns: loop, arch, whorl
+
+**Local Features**
+
+* Ridge ending
+* Ridge bifurcation
+* Ridge divergence
+* Dot or Island
+* Enclosure
+* Short ridge
 
 **More**:
 Global representation is an overall attribute of the finger and a single representation is valid for the entire fingerprint and is typically determined by an examination of the entire finger.
@@ -314,20 +406,25 @@ A local representation consists of several components, each component typically 
 
 Typically, generic representations are used for fingerprint indexing and local representations are used for fingerprint matching.
 
-Global
+### 14
 
-* Pattern Area
-* Core Point
-* Type Lines
-* Delta
-* Ridge Count
-* Basic Ridge Patterns: loop, arch, whor
+> What kind of points could be shown as singular points? Could you draw three basic fingerprint classes according to singular points?
+> How many different points could be usually indicated as fingerprint minutia? Please list each definition.
+
+Lec7-38
 
 ### 16-C3
+
 > Convolution in image processing. Compute the convolved image.
 
 Answer for this particular question:
 on my notebook.
+
+### 14-C2
+
+> Assume that there is an IrisCode with 256 bytes by using texture feature. If 4 bits represent a feature, please compute the total number of features represented by the IrisCode
+
+256*8/4
 
 ## Section D
 
@@ -364,4 +461,18 @@ Laplacian Edge Enhancement Filter
 * While the Laplacian Edge Enhancement Filter will _only sharpen the edge and the segmentation between different smooth parts_. 
 * It works better for _edge extraction_. 
 * The _smooth parts will become darker_ due to the sums of its weight is 0.
+
+### 14-D1
+> 100 inidividuals try to use a biometric system. There are 38 genuine individuals are accepted, 8 genuine individuals rejected, 44 imposter rejected and 10 imposter accepted. Please evaluate the biometrics system by giving the FAR and FRR. If FTE=0.5, how about ATV?
+
+FRR = True reject/Total true
+FAR = False reject / Total false
+ATV = (1-FTE)(1-FRR)
+EER is where FAR=FRR
+Crossover = 1:x <- x=round(1/EER)
+
+FRR = 8/46
+FAR = 10/54
+ATV = 0.5*38/46 = 0.41
+
 
