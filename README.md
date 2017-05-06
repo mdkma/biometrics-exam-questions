@@ -51,11 +51,9 @@ Evaluation Method
 13. Filter operations for edge extraction: High-pass filter and Laplacian edge filter
 14. face recognition process
 
-
-
 ## Past Questions: Explanations
 
-### 1
+### 16-A1
 
 > As you know, there are two doors used in the current E-Channel border application. The first one could need to show a personal HK ID card, and the second to obtain user's fingerprint and match with the record in the DB. If only one door to be used, how to implement this application? Please draw the necessary flowcharts to point out the common functions and the differences between these two doors and the one door E-Channel border application.
 > 
@@ -79,7 +77,7 @@ Hierarchical approach uses some simple features and fast matching algorithm to r
 Classification approach cuts down the DB in several (fuzzy/non-fuzzy) groups. The input feature is classified to one/several group.
 
 
-### 2
+### 16-A2
 
 > There are two kinds of biometrics from an eye, i.e. Iris and Retina. Please define their features and explain each advantages and disadvantages.
 
@@ -137,7 +135,7 @@ Disadvantages
 * any unusual lighting situations may affect the ability of the camera to acquire its subject
 
 
-### 3
+### 16-A3
 
 > The following two models are from the different speakers saying the same vowel. Please try to define some necessary features to divide these two models.
 ![q3](img/3.png)
@@ -154,7 +152,7 @@ Features used in real system:
 * pitch contours(variation of the pitch during the period of utterance)
 * features derived from linear prediction
 
-### 4 
+### 16-A4
 
 > Face detection & location is an important stage in face recognition. There are two main types, i.e., Statistics-based and Knowledge-based, to implement this function. Each type could include a few methods. Could you show at least one method for each type and roughly explain how to work?
 
@@ -179,7 +177,7 @@ Detect faces with the use of color information of face, as usually color of face
 * Movement information
 * Symmetry information
 
-### 5
+### 16-A5
 
 > Explain following basic concepts:
 > 1) Enrollment
@@ -198,7 +196,7 @@ It frequently happens that we can measure a fixed set of $d$ features for any ob
 Matching scores:
 The matching result between two templates
 
-### 6
+### 16-A6
 
 > There are two comparison methods in pattern recognition, Euclidean distances and Hamming distances, for decision making. What difference between these two distances? If given two words: "WHILE" and "WHORL", what is their Hamming distance?
 
@@ -212,7 +210,7 @@ Euclidean distance is the length of the line segment that connects two coordinat
 
 Hamming distance: 3/5.
 
-### 7
+### 16-A7
 
 > There are three main approaches in biometrics authentication: Statistical, Syntactic and NN. For each approach, please give a its dfn and explore a simple application.
 
@@ -228,13 +226,13 @@ Most of PR systems are based on this approach.
 
 Example: Lec5-10
 
-### 8
+### 14
 
 > (14) There are two main functions in pattern recognition: Feature Extraction and Matching. Please explain which stage is important after all possible features are extracted. How to implement matching function? 
 
-### 9
+### 14
 
-> (14) Please find their differences in the following three pairs of basic concepts:
+> Please find their differences in the following three pairs of basic concepts:
 > 
 > Template and sample;
 > Speech recognition and voice biometrics
@@ -245,7 +243,7 @@ Example: Lec5-10
 
 ## Section B
 
-### 1
+### 16-B1
 
 > It is necessary to perform a statistical analysis from a relative large DB... **Variance of Inter-class, Variance of Intra-class and F-ratio**
 
@@ -256,7 +254,7 @@ _F-ratio is inter-class variability/intra-class variability._
 
 F-ratio is the balanced ratio considering these two variables. _The higher is the ratio, the more discriminant the feature is._
 
-### 2
+### 16-B2
 
 > Signature features
 
@@ -264,7 +262,7 @@ F-ratio is the balanced ratio considering these two variables. _The higher is th
 
 **Vertical and horizontal projection**: the count of black pixels per horizontal or vertical lines
 
-### 3
+### 16-B3
 
 > PCA Method: list the main steps to implement this method? Point out the main advantages using this method.
 
@@ -283,11 +281,13 @@ F-ratio is the balanced ratio considering these two variables. _The higher is th
 1. Eigenfaces do not distinguish between shape and appearance
 2. PCA does not use class information
 
-> (14 B2) Eigenface is PCA-based method with five steps. After finishing the first four stages, we obtain 9 eigenvectors with nonzero eigenvalues in the form of image. At the fifth step, the $k$ most principal components are selected abased on the ratio $\gamma$ of the eigenvalue sum of selected components to the total sum. Please decide the value of $k$ when the threshold of $\gamma$ is 85%.
+### 14-B2
+
+> Eigenface is PCA-based method with five steps. After finishing the first four stages, we obtain 9 eigenvectors with nonzero eigenvalues in the form of image. At the fifth step, the $k$ most principal components are selected abased on the ratio $\gamma$ of the eigenvalue sum of selected components to the total sum. Please decide the value of $k$ when the threshold of $\gamma$ is 85%.
 
 ## Section C
 
-### 1
+### 16-C1
 > Power Law Function for contrast enhancement
 
 $\gamma < 1$ enhance contrast in dark regions
@@ -297,9 +297,11 @@ For first picture, $\gamma$ can be 0.5. 弧线应该是圆左上角样子
 
 For second picture, $\gamma$ can be 3. 弧线应该是圆右下角的样子
 
-> (14) Why Median Filter is better than Low-Pass Filter for noise reduction?
+### 14
 
-### 2
+> Why Median Filter is better than Low-Pass Filter for noise reduction?
+
+### 16-C2
 > Fingerprint representations can be broadly categorized into two types: global and local. Global feature characteristics includes singular points and basic ridge patterns(six classes). Local representation is based on minute details(minutiae) of finger ridges. Given the following fingerprint image, please indicate which class it is and account all each global and local feature you can find.
 > (14) What kind of points could be shown as singular points? Could you draw three basic fingerprint classes according to singular points?
 > (14) How many different points could be usually indicated as fingerprint minutia? Please list each definition.
@@ -321,7 +323,7 @@ Global
 * Ridge Count
 * Basic Ridge Patterns: loop, arch, whor
 
-### 3
+### 16-C3
 > Convolution in image processing. Compute the convolved image.
 
 Answer for this particular question:
